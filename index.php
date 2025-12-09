@@ -137,6 +137,9 @@
 		echo 'NO';
 	}
  
+
+	echo "<br><h3>#7 Оператор Switch-case</h3>"
+
 ?> 
 </body>
 </html>
