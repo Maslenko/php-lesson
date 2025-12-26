@@ -187,6 +187,51 @@
 		echo $matrix[0][1];
 
 
-?> 
+	echo "<br><h3>#9 Цикл for, while и do while. Операторы циклов</h3></br>";
+	
+	// Цикл for
+	// for($i = 100; $i >= 20; $i -= 5) 	
+	//	 echo $i.'<br>';  
+
+	// Цикл while
+	//	$i = 1; 
+	//	while($i <= 10) {
+	//		echo $i.'<br>';
+	//		$i++;  
+	//	} 
+
+	// Цикл Do While 
+	//   $i = 100; 
+	//   do {
+	//   		echo $i; 
+	//   }	while($i < 10);  
+
+	// Операторы в циклах 
+	// for($el = 100; $el > 10; $el /=2) {
+	//	if($el < 15)
+	//		break; 
+
+	//	if($el % 2 == 0)
+	//		continue;  	 
+
+	//	echo $el.'<br>'; 
+	// }   
+
+	// $list = [5, 7, 3, 8, "some", 45.7]; 
+
+	// for($i = 0; $i < count($list); $i++)
+	//	echo "Element $i: $list[$i]<br>"; 
+
+	// Ассоциативный массив 
+
+	$list = ["age" => 45, "name" => "Alex", "hobby" => "Snowboard"];
+	$arr = [5, 6, 8, 9];
+	//	foreach ($list as $item => $value) {
+	//		echo "Key: $item. Value: $value. <br>";
+	//	}
+	foreach ($arr as $i => $value) {
+		echo "Index: $i. Value: $value.<br>";
+	}
+?> 	
 </body>
 </html>
