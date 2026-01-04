@@ -232,6 +232,88 @@
 	foreach ($arr as $i => $value) {
 		echo "Index: $i. Value: $value.<br>";
 	}
-?> 	
+
+	echo "<br><h3>#10 Функции. Область видимости.</h3></br>";
+
+		/* function info() {
+			echo "Это фукция<br>";
+		}
+
+		info(); //Обращаемся к функции, чтобы вывести ее на экран. 
+		info(); //Еще раз обращаемся
+		info(); //И ещё раз.. */ 
+
+		/*function info($parametr) { //задаем параметр функции 
+			echo "$parametr<br>";
+		}
+
+		function math($xx, $yy) {
+			$ress = $xx + $yy; 
+			//echo $ress; 
+			info($ress); //вызываем отдельную функцию info 
+		} 
+
+		//info(4);  
+		//info("Передаём сюда параметры, любые."); 
+		//info(5.6); 
+
+		math(4, 6); //на экране будет 10
+		math(5, 8); 
+		math(7, 7);*/
+
+		function info($parametr) {
+			echo "$parametr<br>"; 
+		}
+
+		function math($xx, $yy) {
+			return $xx + $yy;     //Функция возвращает результат 
+		}	
+
+		$res_1 = math(4, 6);
+		$res_2 = math(5, 8); 
+		$res_3 = math(7, 7); 
+
+		info($res_1);
+		info($res_2); 
+		info($res_3);
+
+
+		function summary($array) {
+			$summa = 0; 
+			foreach ($array as $value) { //Цикл forech
+				$summa += $value; 
+			}
+
+			return $summa; 
+		}
+
+		$spisok = [5, 7, 3]; 
+		echo summary($spisok)."<br>"; 
+		echo summary([5, 2, 3])."<br>";
+
+		//Область видимости 
+
+		function xinfo() {
+			global $x0; //Теперь будет выводиться глобальная переменная 0 
+			$x0 = 0; //Видна исключительно в пределах функции
+		} 
+
+		function click() {
+			static $count;
+			//$count = 0;  
+			$count++; 
+			echo $count.'<br>'; 
+		}
+
+		click();
+		click(); 
+		click(); 
+		click(); 
+
+		//$x0 = 10; 
+		//xinfo(); 
+		//echo $x0; //Видимая область. Переменная видна в пределах всего документа 
+?> 
+
 </body>
 </html>
