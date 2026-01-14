@@ -1,9 +1,21 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 	<title>PHP Lesson</title>
 </head>
 <body>
+	<header>
+		<a href="index.php">Главная</a>
+		<a href="about.php">Про нас</a>
+	</header> -->	
+<?php
+	$title = "Главная страница";
+	require_once "blocks/header.php";
+	// include require "blocks/header.php"; 
+	// include - позволяет загрузить страницу с отсутствующим файлом. Или добавить еще раз настройки из файла 
+	// include_once или require_once - позволяет загрузить файл только один раз на странице
+?>	
+	<h1>Главная страница</h1>
 <?php
 	echo "Miru-<b>Mir!</b>";
 	echo "<br>Hallo";
@@ -300,7 +312,7 @@
 
 		function click() {
 			static $count;
-			//$count = 0;  
+			//$count = 0;  //Тогда на экране будет 1111
 			$count++; 
 			echo $count.'<br>'; 
 		}
@@ -314,6 +326,9 @@
 		//xinfo(); 
 		//echo $x0; //Видимая область. Переменная видна в пределах всего документа 
 ?> 
-
+<!-- <footer>Ваши права защищщены? &copy; 2025</footer>-->
+<?php
+	require "blocks/footer.php";
+?>
 </body>
 </html>
