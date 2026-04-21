@@ -199,7 +199,7 @@
 		echo $matrix[0][1];
 
 
-	echo "<br><h3>#9 Цикл for, while и do while. Операторы циклов</h3></br>";
+	echo "<br><h3>#9 Цикл for, while и do while. Операторы циклов</h3><br>";
 	
 	// Цикл for
 	// for($i = 100; $i >= 20; $i -= 5) 	
@@ -245,7 +245,7 @@
 		echo "Index: $i. Value: $value.<br>";
 	}
 
-	echo "<br><h3>#10 Функции. Область видимости.</h3></br>";
+	echo "<br><h3>#10 Функции. Область видимости.</h3><br>";
 
 		/* function info() {
 			echo "Это фукция<br>";
@@ -325,7 +325,43 @@
 		//$x0 = 10; 
 		//xinfo(); 
 		//echo $x0; //Видимая область. Переменная видна в пределах всего документа 
+
+		echo "<br><h3>#13 Работа с датой и временем</h3><br>";
+
+		echo "<a href='https://www.php.net/manual/en/datetime.format.php' target='_blank'>Символы для вывода даты</a><br>";
+		date_default_timezone_set('Europe/Vienna');
+		echo date('d F o, H:i'); 
+
+		echo "<br><span id='clock'></span>";
+
+
+
 ?> 
+	<!-- JS нужен чтобы часы обновлялись на странице -->
+	<script> 
+		function updateClock() {
+    		const now = new Date();
+
+    		const options = {
+        		timeZone: 'Europe/Vienna',
+        		day: '2-digit',
+        		month: 'long',
+        		year: 'numeric',
+        		hour: '2-digit',
+        		minute: '2-digit',
+        		second: '2-digit'
+    		};
+
+    		const formatted = new Intl.DateTimeFormat('en-GB', options).format(now);
+
+    		document.getElementById('clock').innerHTML = formatted;
+		}
+
+		setInterval(updateClock, 1000);
+		updateClock();
+	</script>
+
+
 <!-- <footer>Ваши права защищщены? &copy; 2025</footer>-->
 <?php
 	require "blocks/footer.php";
