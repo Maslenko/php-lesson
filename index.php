@@ -330,7 +330,10 @@
 
 		echo "<a href='https://www.php.net/manual/en/datetime.format.php' target='_blank'>Символы для вывода даты</a><br>";
 		date_default_timezone_set('Europe/Vienna');
-		echo date('d F o, H:i'); 
+		echo date('l, d F o, H:i').'<br><br>';
+		echo time(); 
+		echo "<p>" . time() . " — показывает количество секунд с 1 января 1970 г. (начало эпохи Unix-систем)</p>"; 
+		//. — это конкатенация строк (склеивание)
 
 		echo "<br><span id='clock'></span>";
 
