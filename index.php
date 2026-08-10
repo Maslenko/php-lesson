@@ -331,7 +331,7 @@
 		echo "<a href='https://www.php.net/manual/en/datetime.format.php' target='_blank'>Символы для вывода даты</a><br>";
 		date_default_timezone_set('Europe/Vienna');
 		//echo date('l, d F o, H:i', time() + 10000).'<br><br>';
-		echo date('m-d H:i:s', strtotime("Next Month"));
+		echo date('m-d H:i:s', strtotime("+1 Month"));
 
 		//echo time(); 
 		echo "<p>" . time() . " — показывает количество секунд с 1 января 1970 г. (начало эпохи Unix-систем)</p>"; 
