@@ -347,8 +347,40 @@
 		unset($lis[1]); // убирает элемент из массива
 		sort($lis); // сортирует массив 
 		rsort($lis); // сортирует в обратном порядке 
-		shuffle($lis); // разбрасывает элементы по разным индексам 
-		print_r($lis);	
+		// shuffle($lis); // разбрасывает элементы по разным индексам 
+		// echo in_array(7, $lis); // находит число в массиве. 1 на экране означает True
+
+		/* if(in_array(4, $lis) == "")
+			echo "Not found";
+		else
+			echo "Found"; */
+
+		$arr = array_slice($lis, 2, 2); //$arr = array_slice($lis, 0, count($lis));
+		print_r($arr); //var_dump($arr); 
+		echo "<br>";
+
+		$arr_1 = [5, 7];
+		$arr_2 = [6, 8, 9]; 
+		$arr_3 = array_merge($arr_1, $arr_2); 
+		print_r($arr_3); 
+		echo "<br>"; 
+
+		print_r($lis); 	
+		echo "<br>";
+
+		$b = "10"; 
+		echo gettype($b). '<br>'; 
+		echo is_numeric($b). '<br>';
+		echo is_integer($b). '<br>';
+		echo is_array($b). '<br>';
+
+		$str = "Example"; 
+		echo strpos($str, "am"). '<br>'; // удобная функция для нахождения какого-либо символа строки. 
+
+		$words = "John, Bob, Alex"; 
+		$arr_words = explode(",", $words); 
+		print_r($arr_words);
+		echo '<br>' .implode(" | ", $arr_words);    
 
 ?> 
 	<!-- JS нужен чтобы часы обновлялись на странице -->
