@@ -380,7 +380,9 @@
 		$words = "John, Bob, Alex"; 
 		$arr_words = explode(",", $words); 
 		print_r($arr_words);
-		echo '<br>' .implode(" | ", $arr_words);    
+		echo '<br>' .implode(" | ", $arr_words);  
+
+		echo "<br><h3>#15 Работа с файлами</h3><br>";    
 
 ?> 
 	<!-- JS нужен чтобы часы обновлялись на странице -->
