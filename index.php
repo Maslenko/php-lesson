@@ -397,7 +397,19 @@
 
 		fclose($file);
 
-		echo $content;      
+		//echo $content; 
+		echo "<pre>".$content."<pre><br>"; // Так содержимое переходит на новую строку 
+
+		//file_put_contents("a.text", "Example\n Hello");      
+		echo file_get_contents("a.txt")."<br>";
+		echo file_exists("a.txt"). "<br>"; // Показывает, есть ли такой файл
+		//rename("a.txt", "new_name.txt"); 
+		//unlink("new_name.txt"); // Удаляет файл 
+
+		echo __FILE__."<br>"; // Показывает путь к текущему файлу 
+		
+		echo fileperms(__FILE__); // Показывает права доступа 
+		chmod(__FILE__, 0777); // Меняет права доступа к файлу.  
 
 ?> 
 	<!-- JS нужен чтобы часы обновлялись на странице -->
