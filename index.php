@@ -382,7 +382,22 @@
 		print_r($arr_words);
 		echo '<br>' .implode(" | ", $arr_words);  
 
-		echo "<br><h3>#15 Работа с файлами</h3><br>";    
+		echo "<br><h3>#15 Работа с файлами</h3><br>"; 
+
+		//$file = fopen("text.text", "w");
+ 	    //$file = fopen("text.text", "a");
+        //fwrite($file, "\nExample text\n Хеллоу");
+		//fclose($file); 
+
+		$filename = "text.text";
+
+		$file = fopen($filename, "r");
+		
+		$content = fread($file, filesize($filename));
+
+		fclose($file);
+
+		echo $content;      
 
 ?> 
 	<!-- JS нужен чтобы часы обновлялись на странице -->
