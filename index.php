@@ -413,7 +413,25 @@
 
 		echo "<br><h3>#16 Функция phpinfo() и массив $_server</h3><br>"; 
 
-		phpinfo(); 
+		//phpinfo();
+		echo '<pre>';
+		print_r($_SERVER);
+		echo '</pre>';  
+
+		//echo $_SERVER['HTTPS'];
+		 
+		// Переадресация:  
+		/* echo $_SERVER['HTTP_HOST'].' - '.$_SERVER['REQUEST_URI']."<br>"; 
+		echo $_SERVER['HTTP_USER_AGENT'];  
+
+		if($_GET['source'] != "") {
+			$link = explode("?source=", $_SERVER['REQUEST_URI']);
+			$redirect = "http://".$_SERVER['HTTP_HOST'].$link[0];
+
+			header('HTTP/1.1 301 Moved Permanently');
+			header('Location: '.$redirect); 
+			exit(); 
+		} */
 
 ?> 
 	<!-- JS нужен чтобы часы обновлялись на странице -->
