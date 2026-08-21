@@ -9,6 +9,8 @@
 		<a href="about.php">Про нас</a>
 	</header> -->	
 <?php
+	session_start(); 
+
 	$title = "Главная страница";
 	require_once "blocks/header.php";
 	// include require "blocks/header.php"; 
@@ -17,6 +19,11 @@
 ?>	
 	<h1>Главная страница</h1>
 <?php
+
+	$user_name = "Alex"; 
+	//setcookie("user_name", $user_name, time() + 180); 
+	setcookie("user_name", $user_name, time() - 180); //удаляем куки
+
 	echo "Miru-<b>Mir!</b>";
 	echo "<br>Hallo";
 	echo "<br>Это одинокая кавычка \" "; 
@@ -443,6 +450,26 @@
 		$subject = "=?utf-8?B?".base64_encode($subject)."?="; //кодировка для темы 
 		$headers = "from: $from\r\nReply-to: $from\r\nContent-type:text/plain; charset=utf-8\r\n";
 		mail($to, $subject, $message, $headers);    
+
+		echo "<br><h3>#18 Куки и сессии в PHP</h3><br>"; 
+
+		//$user_name = "Alex"; 
+		//setcookie("user_name", $user_name, time() +5); //Перенес в начало страницы. Т.к. setcookie должно быть в начале, перед echo.
+		//setcookie("user_name", $user_name, time() - 180); //Так куки можно удалить
+		print_r($_COOKIE); 
+
+		setcookie("user_name", $user_name, time() - 180);
+		echo $_COOKIE['user_name']; 
+
+		$_SESSION['user_name'] = $user_name; 
+
+		//unset($_SESSION['user_name']); //Удаляет сессию 
+		// session_destroy(); // тоже удаляет сессию  
+
+		if($_SESSION['user_name'] == "Alex")
+			echo "Дa, сессия установлена!";
+
+
 
 ?> 
 	<!-- JS нужен чтобы часы обновлялись на странице -->
