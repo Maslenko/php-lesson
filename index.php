@@ -433,6 +433,17 @@
 			exit(); 
 		} */
 
+		echo "<br><h3>#17 Отправка почты с сайта</h3><br>"; 
+
+		$message = "Сообщение по почте"; 
+		$to = "alexmaslenko@gmail.com";
+		$from = "photokopilka@gmail.com"; 
+		$subject = "Тема сообщения"; 
+
+		$subject = "=?utf-8?B?".base64_encode($subject)."?="; //кодировка для темы 
+		$headers = "from: $from\r\nReply-to: $from\r\nContent-type:text/plain; charset=utf-8\r\n";
+		mail($to, $subject, $message, $headers);    
+
 ?> 
 	<!-- JS нужен чтобы часы обновлялись на странице -->
 	<script> 
