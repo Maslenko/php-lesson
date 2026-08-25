@@ -20,7 +20,7 @@
 	$title = "Про нас";
 	require "blocks/header.php";
 ?>	
-<h1>Про нас</h1>
+<h1 class="mt-5">Про нас</h1>
 <?php
 	require "blocks/footer.php";
 ?>
