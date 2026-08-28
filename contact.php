@@ -5,6 +5,8 @@ require_once "blocks/header.php";
 ?>
 <h1 class="mt-5"><?=$title?></h1>
 
+<div class="text-success"><?=$_SESSION['success_mail']?></div>
+
 <form action="check_contact.php" method="post" novalidate="">
 
 	<input type="text" name="username" value="<?=$_SESSION['user_name']?>" placeholder="Введите имя" class="form-control">
